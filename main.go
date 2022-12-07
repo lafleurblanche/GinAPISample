@@ -19,5 +19,11 @@ func main() {
 		c.String(http.StatusOK, t.String())
 	})
 
+	r.GET("/ping", func(c *gin.Context) {
+		c.JSON(200, gin.H{
+			"message": "pong",
+		})
+	})
+
 	r.Run(":8080")
 }
